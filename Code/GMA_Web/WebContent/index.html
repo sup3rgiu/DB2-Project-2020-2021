@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Login page</title>
+	<script src="./js/loginManagement.js" th:src="@{/js/loginManagement.js}" charset="utf-8" defer></script>
+	<link rel="stylesheet" type="text/css" media="all" href="./css/style.css" th:href="@{/css/style.css}" />
+</head>
+
+<body id="index-body">
+	<div class="index-container" id="index-container" th:classappend="${signupErrorMsg} ? 'right-panel-active'">
+		<div class="form-container sign-up-container">
+			<form class="login-form" action="Signup" method="POST">
+				<h1>Create Account</h1>
+				<input type="text" id="email-signup" name="email" placeholder="Email" required/>
+				<input type="text" name="username" placeholder="Username" required/>
+				<input type="password" id="password-signup" name="pwd" placeholder="Password" required/>
+				<input type="password" placeholder="Confirm Password" name="confirm_pwd" id="confirm_password" required/>
+				<input id="signup-button" type="button" value="Sign Up">
+				<p class="margin-paragraph" id="errormessage-signup" th:text=" ${signupErrorMsg}"></p>
+			</form>
+		</div>
+		<div class="form-container sign-in-container">
+			<form class="login-form" action="CheckLogin" method="POST">
+				<h1>Sign in</h1>
+				<input type="text" name="username" placeholder="Username" required/>
+				<input type="password" id="password-login" name="pwd" placeholder="Password" required/>
+				<input id="login-button" type="button" value="Sign In">
+				<p class="margin-paragraph" id="errormessage-login" th:text=" ${loginErrorMsg}"></p>
+			</form>
+		</div>
+		<div class="overlay-container">
+			<div class="overlay">
+				<div class="overlay-panel overlay-left">
+					<h1>Welcome Back!</h1>
+					<p class="margin-paragraph">To keep connected with us please login with your personal info</p>
+					<button class="ghost" id="signIn">Sign In</button>
+				</div>
+				<div class="overlay-panel overlay-right">
+					<h1>Hello, Friend!</h1>
+					<p class="margin-paragraph">Enter your personal details and start journey with us</p>
+					<button class="ghost" id="signUp">Sign Up</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer id="index-footer">
+		<p class="margin-paragraph">
+			Created by Andrea Lampis
+		</p>
+	</footer>
+</body>
+</html>

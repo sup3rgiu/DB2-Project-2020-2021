@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.2"
+			 xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+			 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+	<persistence-unit name="GMA_EJB"
+					  transaction-type="JTA">
+		<jta-data-source>GMA_DB</jta-data-source>
+		<class>it.polimi.db2.gma.entities.CancelledQuestionnaire</class>
+		<class>it.polimi.db2.gma.entities.FixedQuestion</class>
+		<class>it.polimi.db2.gma.entities.User</class>
+		<class>it.polimi.db2.gma.entities.Answer</class>
+		<class>it.polimi.db2.gma.entities.MySqlTransaction</class>
+		<class>it.polimi.db2.gma.entities.Product</class>
+		<class>it.polimi.db2.gma.entities.Questionnaire</class>
+		<class>it.polimi.db2.gma.entities.Review</class>
+		<class>it.polimi.db2.gma.entities.OffensiveWord</class>
+		<class>it.polimi.db2.gma.entities.Leaderboard</class>
+		<class>it.polimi.db2.gma.entities.InputType</class>
+		<class>it.polimi.db2.gma.entities.OptionGroup</class>
+		<class>it.polimi.db2.gma.entities.OptionChoice</class>
+		<class>it.polimi.db2.gma.entities.Question</class>
+        <properties>
+			<property name="eclipselink.logging.level" value="FINE" />
+			<property name="toplink.jdbc.url" value="jdbc:mysql://localhost:3306"/>
+			<property name="toplink.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+			<property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306"/>
+			<property name="hibernate.connection.driver_class" value="com.mysql.cj.jdbc.Driver"/>
+			<property name="openjpa.ConnectionURL" value="jdbc:mysql://localhost:3306"/>
+			<property name="openjpa.ConnectionDriverName" value="com.mysql.cj.jdbc.Driver"/>
+			<property name="eclipselink.jdbc.url" value="jdbc:mysql://localhost:3306"/>
+			<property name="eclipselink.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+		</properties>
+	</persistence-unit>
+</persistence>
